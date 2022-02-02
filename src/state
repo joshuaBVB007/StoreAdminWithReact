@@ -1,0 +1,39 @@
+class Clock extends React.Component{
+    //segundo se llama al constructor de este metodo a renderizar
+    constructor(props){
+        super(props);
+        this.state={date:new Date()}
+    }
+    //cuarto:cuando el DOM ha sido actualizado react llama a este metodo
+    //solicitandole establecer un nuevo timer a traves del metodo tick();
+    componentDidMount(){
+            this.segundo_a_mostrar=setInterval( ()=> this.tick(),1000)
+    }
+    //sexto: si el componente clocl es removido del DOM se ejecuta este metodo
+    componentWillUnmount(){
+        clearInterval(this.segundo_a_mostrar);
+    }
+    //quinto:como el metodo didmount esta llamando cada segundo al tick(),el tick actualiza el
+    //valor de date por una nueva fecha ,al ejecutarse setstate
+    // react llama nuevamente a REACT.DOM.RENDER pero ahora con un nuevo valor
+    tick() {
+        this.setState({
+          date: new Date()
+        });
+      }
+      //tercero se llama a este metodo para actualizar el DOM esa es la secuencia
+    render(){
+        return (
+            <div>
+              <h1>Hello, world!</h1>
+              {/* <h2>It is {this.props.date.toLocaleTimeString()}.</h2> */}
+              <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+            </div>
+          );  
+    }
+}
+  //primero se llama a estas lineas de codigo
+ReactDOM.render(
+    <Clock />,
+    document.getElementById('root')
+  );
