@@ -1,26 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { name,element } from './conditional_syntax/ifs'
+//importamos la clase jonathan para crear instancias de esa clase
+import { RoutingApp } from "./Routing/routes.js";
+import { BrowserRouter } from "react-router-dom";
+import { Header } from "./Header/Header.js";
 
-const recep=name;
 
-const double = (
-  <div>
-    <h1>Hello!</h1>
-    <h2>Good to see you { recep } </h2>
-  </div>
-);
+
+function App(){
+  return (
+    <div>
+      <div className="App">
+        <Header/>
+        <RoutingApp/>
+      </div>
+    </div>
+  )
+}
 
 ReactDOM.render(
-  double,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
-ReactDOM.render(
-  element,
-  document.getElementById('rusia')
-);
 
 
 

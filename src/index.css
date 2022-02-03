@@ -1,0 +1,8 @@
+@import "../src/Header/Header.css";
+
+
+/* quitamos los margenes y los bordes pa todo el proyecto */
+*{
+    margin:0;
+    padding:0;
+}
