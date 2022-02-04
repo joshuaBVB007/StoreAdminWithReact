@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    background-color: rgb(31, 5, 27);
+    background-color: rgb(209, 19, 124);
 }
 
 /*Las 2 imagenes del costado derecho*/
@@ -8,7 +8,7 @@
     width: 50px;margin-right: 20px;cursor: pointer;
 }
 .titulo{
-    font-weight: bold;font-size: 2.0em;color: rgb(133, 198, 252);;
+    font-weight: bold;font-size: 2.0em;color: white;
 }
 
 /*Barra navegacion*/
@@ -40,7 +40,7 @@ nav ul li:hover{
 /*Etiquetas ancla de la barra de navegacion*/
 nav ul li a{
     text-decoration: none;
-    color: rgb(133, 198, 252);
+    color: white;
     font-weight: bold;
     font-size: 1.0em;
 }

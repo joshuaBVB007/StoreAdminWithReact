@@ -1,6 +1,7 @@
+import React from 'react';
+
 //un array de valores
 const numbers = [1, 2, 3, 4, 5];
-
 //en lisItems almacenaremos los valores doblados
 const listItems = numbers.map( number =>
   <li key={number.toString()}>
@@ -8,8 +9,11 @@ const listItems = numbers.map( number =>
     {console.log(number)}
   </li>
 );
-//mostramos en el DOM la lista de valores
-ReactDOM.render(
-    <ul>{listItems}</ul>,
-    document.getElementById('root')
-  );
+
+export class Products extends React.Component {
+  render(){
+    return (
+        <ul>{listItems}</ul>
+    );
+  }
+} 

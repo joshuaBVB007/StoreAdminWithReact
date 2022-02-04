@@ -8,19 +8,13 @@ export class Header extends React.Component {
       <header class="header">
         <nav>
             <img class="img1" src="/logo192.png" alt="principal_photo"/>
-            <h6 class="titulo">School Admin</h6>
+            <h6 class="titulo">Store Admin</h6>
             <ul class="nav_links">
                 <li>
                   <Link to="/">About</Link>
                 </li>
                 <li>
                   <Link to="dashboard">Dashboard</Link>
-                </li>
-                <li>
-                  <Link to="about">About</Link>
-                </li>
-                <li>
-                  <Link to="about">Doesn't function</Link>
                 </li>
             </ul>
         </nav>

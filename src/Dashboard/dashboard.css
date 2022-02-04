@@ -1,0 +1,14 @@
+.ulli{
+    list-style-type: none; width:60%;
+    margin:1% auto;
+}
+.lili{ 
+    float: left;margin: 1%; 
+    width:40%;
+}
+.card {
+    width:100%;
+}
+.card_body{
+    width:100%;
+}

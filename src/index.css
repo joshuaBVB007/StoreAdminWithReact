@@ -1,4 +1,6 @@
 @import "../src/Header/Header.css";
+@import "../src/About/About.css";
+@import "../src/Dashboard/dashboard.css";
 
 
 /* quitamos los margenes y los bordes pa todo el proyecto */
