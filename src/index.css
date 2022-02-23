@@ -1,6 +1,11 @@
 @import "../src/Header/Header.css";
 @import "../src/About/About.css";
 @import "../src/Dashboard/dashboard.css";
+@import "../src/Clock/Clock.css";
+@import "../src/Event/events.css";
+@import "../src/Menu/menu.css";
+@import "../src/FruitsFirebase/fruits.css";
+
 
 
 /* quitamos los margenes y los bordes pa todo el proyecto */

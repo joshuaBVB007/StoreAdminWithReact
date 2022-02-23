@@ -1,8 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import { Products } from "../Products/products";
 import { About } from "../About/About";
-import { Dashboard } from "../Dashboard/dashboard"
+import { Jonathan } from '../FruitsFirebase/fruits';
 
 
 export function RoutingApp(){
@@ -10,8 +9,12 @@ export function RoutingApp(){
         <div>
             <Routes>
                 <Route path="/" element={<About />} />
-                <Route path="about" element={<Products />} />
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="about" element={<About />} />
+                <Route path="dashboard" element={<Jonathan />} />
+                {/* <Route path="dashboard" element={<Dashboard />} >
+                    <Route path="expenses" element={<Products />} />
+                    <Route path="frutas" element={<Products />} />
+                </Route> */}
             </Routes>
         </div>
     );

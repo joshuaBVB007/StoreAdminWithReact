@@ -1,0 +1,21 @@
+.card{
+    float:left;
+    width:20%;
+    height:10%;
+    border: none;
+    margin-top:4%;
+}
+
+.card-title{
+    text-align:center;
+    font-size:1.0em;
+}
+
+.card-img{
+    border-radius:50%;
+}
+
+.contenedor_frutas{
+    width:60%;
+    margin: auto;
+}

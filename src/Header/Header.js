@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-
 export class Header extends React.Component {
   render() {
     return (
-      <header class="header">
+      <header className="header">
         <nav>
-            <img class="img1" src="/logo192.png" alt="principal_photo"/>
-            <h6 class="titulo">Store Admin</h6>
-            <ul class="nav_links">
+            <img className="img1" src="/logo192.png" alt="principal_photo"/>
+            <h6 className="titulo">Store Admin</h6>
+            <ul className="nav_links">
                 <li>
                   <Link to="/">About</Link>
                 </li>
@@ -23,27 +22,5 @@ export class Header extends React.Component {
   }
 }
 
-export function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
 
-export function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-export function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
 

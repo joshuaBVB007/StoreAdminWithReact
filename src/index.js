@@ -5,8 +5,6 @@ import './index.css';
 import { RoutingApp } from "./Routing/routes.js";
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "./Header/Header.js";
-import { Dashboard } from "./Dashboard/dashboard";
-
 
 
 function App(){

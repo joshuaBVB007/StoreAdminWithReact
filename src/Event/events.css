@@ -1,0 +1,11 @@
+.events_contenedor{
+    width:60%;
+    margin:1% auto;
+}
+.events_input{
+    display: inline-block;
+    width: 100%;
+    border-radius:20px;
+    margin: 1% 0.4%;
+    border-width: 4px;
+}

@@ -1,0 +1,8 @@
+1-componente se muestra en el DOM
+2-react llama al constructor cuando el componente llega renderizarce
+3-se inicializa el valor de "state" que equivale a la fecha actual (en el constructor evidentemente)
+4-luego react llama al metodo render() este es el momento de mostrar en la pantalla la fecha que tengamos
+5-cuando estos pasos se han cumplido react llama al metodo componentDidMount() este dentro de el tiene un setInterval
+6-el didMount activa el metodo Tick() este metodo llama a setState() que contiene el objeto que inicalizamos en this.State
+7-gracias a setState react sabe que la fecha ha cambiado y llama al metodo render para mostrar la fecha pero actualizada
+8-si el componente es quitado del DOM react llama al metodo unmount

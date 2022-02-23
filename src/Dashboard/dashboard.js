@@ -1,24 +1,14 @@
 import React from 'react';
+import { Clock } from "../Clock/Clock.js"
+import { Menu } from "../Menu/menu.js"
+import { Outlet } from "react-router-dom";
 
-const numbers = [1, 2, 3, 4];
-const listItems = numbers.map((number) =>
-        <ul class="ulli">
-            <li class="lili" key={number.toString()}>
-                <div class="card">
-                    <img  src="/assets/school.png"  alt="..."/>
-                    <div>
-                        <h1>Gestion</h1>
-                    </div>
-                </div>
-            </li>
-        </ul>
-);
-
-
-export class Dashboard extends React.Component {
-    render() {
-        return (
-            listItems
-        )
-    }
+export function Dashboard(){
+    return (
+        <div>
+            <Clock />
+            <Menu />
+            <Outlet />
+        </div>           
+     )
 }
