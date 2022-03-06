@@ -10,7 +10,7 @@ export function RoutingApp(){
             <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="about" element={<About />} />
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </div>
     );

@@ -28,7 +28,7 @@ const data = snapshot.val();
 for (const key of Object.values(data)) {
     //Esta introduciendo un objeto
     frutas.push(key);
-    console.log(key);
+    // console.log(key);
 }
 });
 
@@ -44,7 +44,7 @@ export class Header extends React.Component {
                   <Link to="/">About</Link>
                 </li>
                 <li>
-                  <Link to="dashboard">Dashboard</Link>
+                  <Link to="dashboard" state={{ fromDashboard: true }}>Dashboard</Link>
                 </li>
             </ul>
         </nav>
