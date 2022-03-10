@@ -1,30 +1,66 @@
-import React,{ usestate } from "react";
-import { useLocation } from "react-router-dom";
+import React , { useState,useEffect }from "react";
 import { frutas } from "../Header/Header"
 
-class ListaFrutas extends React.Component {
+function ListaFrutas (){
 
-    constructor(props) {
-        super(props);
-        this.fruits = frutas;
+    const [dato,setDato]=useState('');
+    const [Frutas,setFrutas]=useState([]);
+    const [tablafrutas,setTablafrutas]=useState([])
+
+    function ActualizameInterfaz(e){
+        setDato(e);
+        filtrar(e);
     }
 
-    render(){
-        return(
-            <div className="contenedor_frutas">
-                    <ul>
-                    { this.fruits.map((item)=>(
-                        <div className="card" key={item.Nombre}>
-                            <h1 className="card-title">{item.Nombre}</h1>
-                            <img className="card-img" src={item.url} alt="jona"></img>
-                            <h6>
-                                <span className="span_card">Stock: </span>{item.Cantidad} KG
-                            </h6>
-                            <Input nombre={item.Nombre} ></Input>
-                        </div>
-                    ))}
-                    </ul> 
+    function filtrar(terminoBusqueda){
+        var resultadosBusqueda=tablafrutas.filter((elemento)=>{
+            if(elemento.Nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+              return elemento;
+            }
+          });
+          setFrutas(resultadosBusqueda);
+    }
+
+    useEffect(()=>{
+        setFrutas(frutas)
+        setTablafrutas(frutas)
+    },[])
+
+
+    return(
+        <div className="contenedor_frutas">
+                <Buscador onJonathan={ ActualizameInterfaz } />
+                {/* <h1>{ dato }</h1> */}
+                <ul>
+                        { Frutas.map((item)=>(
+                            <div className="card" key={item.Nombre}>
+                                <h1 className="card-title">{item.Nombre}</h1>
+                                <img className="card-img" src={item.url} alt="jona"/>
+                                <h6>
+                                    <span className="span_card">Stock: </span>{item.Cantidad} KG
+                                </h6>
+                            </div>
+                        ))}
+                </ul> 
         </div>
+    )
+}
+
+class Buscador extends React.Component {
+    constructor(props) {
+        super(props);
+        this.updateInterface= this.updateInterface.bind(this)
+    }
+
+    updateInterface(e){
+        this.props.onJonathan(e.target.value);
+    }
+    render() {
+        const producto=this.props.productoBuscado;
+        return (
+            <input placeholder="Introduce el producto"
+            value={ producto } 
+            onChange={ this.updateInterface }  />
         )
     }
 }

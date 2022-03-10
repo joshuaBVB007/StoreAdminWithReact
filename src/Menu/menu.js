@@ -1,9 +1,6 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
-import { frutas } from '../Header/Header'
 
 export function Menu(){
-    let navigate = useNavigate();
 
     return (
         <div className="menu">
