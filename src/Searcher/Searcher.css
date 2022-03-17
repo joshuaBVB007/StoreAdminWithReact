@@ -1,0 +1,9 @@
+.buscador_productos{
+    border: 5px solid blueviolet;
+}
+
+input[placeholder]{
+    color:black;
+    font-weight: bold;
+    padding-left:10px;
+}

@@ -1,68 +1,50 @@
 import React , { useState,useEffect }from "react";
 import { frutas } from "../Header/Header"
+import { Searcher } from "../Searcher/Searcher"
 
 function ListaFrutas (){
 
-    const [dato,setDato]=useState('');
-    const [Frutas,setFrutas]=useState([]);
+    const [data,setData]=useState('');
+    const [Fruits,setFruits]=useState([]);
     const [tablafrutas,setTablafrutas]=useState([])
 
-    function ActualizameInterfaz(e){
-        setDato(e);
-        filtrar(e);
+    function UpdateInterface(e){
+        setData(e);
+        filterListProducts(e);
     }
 
-    function filtrar(terminoBusqueda){
-        var resultadosBusqueda=tablafrutas.filter((elemento)=>{
+    function filterListProducts(terminoBusqueda){
+        var resultsFiltered=tablafrutas.filter((elemento)=>{
             if(elemento.Nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
               return elemento;
             }
           });
-          setFrutas(resultadosBusqueda);
+          setFruits(resultsFiltered);
     }
 
     useEffect(()=>{
-        setFrutas(frutas)
+        setFruits(frutas)
         setTablafrutas(frutas)
     },[])
 
 
     return(
         <div className="contenedor_frutas">
-                <Buscador onJonathan={ ActualizameInterfaz } />
+                <Searcher onJonathan={ UpdateInterface } />
                 {/* <h1>{ dato }</h1> */}
                 <ul>
-                        { Frutas.map((item)=>(
+                        { Fruits.map((item)=>(
                             <div className="card" key={item.Nombre}>
                                 <h1 className="card-title">{item.Nombre}</h1>
                                 <img className="card-img" src={item.url} alt="jona"/>
                                 <h6>
-                                    <span className="span_card">Stock: </span>{item.Cantidad} KG
+                                    <span className="span_card">Stock: {item.Cantidad} KG </span>
                                 </h6>
                             </div>
                         ))}
                 </ul> 
         </div>
     )
-}
-
-class Buscador extends React.Component {
-    constructor(props) {
-        super(props);
-        this.updateInterface= this.updateInterface.bind(this)
-    }
-
-    updateInterface(e){
-        this.props.onJonathan(e.target.value);
-    }
-    render() {
-        const producto=this.props.productoBuscado;
-        return (
-            <input placeholder="Introduce el producto"
-            value={ producto } 
-            onChange={ this.updateInterface }  />
-        )
-    }
 }
 
 class Input extends React.Component {
