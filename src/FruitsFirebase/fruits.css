@@ -1,22 +1,24 @@
 .card{
-    float:left;
     width:20%;
     height:10%;
+    margin: 4% 4%;
     border: none;
-    margin-top:4%;
-    /* border: 1px solid black; */
 }
-
 .span_card{
     font-weight: bold;
+    text-align: center;
 }
-
 .card-title{
     text-align:center;
     font-size:2.0em;
     color: blueviolet;
 }
-
+.responsive_fruits{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:center;
+}
 .card-img{
     display:block;
     margin: auto;
@@ -24,7 +26,6 @@
     width: 50%;
     height:120px;
 }
-
 .contenedor_frutas{
     width:80%;
     margin: auto;

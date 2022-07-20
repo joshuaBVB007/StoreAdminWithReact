@@ -21,14 +21,14 @@ const db = getDatabase(app);
 //FIREBASE ENDED
 
 export var frutas=[];
+export let defFrutas;
 
 const starCountRef = ref(db, 'Productos/Frutas');
 onValue(starCountRef, (snapshot) => {
 const data = snapshot.val();
 for (const key of Object.values(data)) {
-    //Esta introduciendo un objeto
+    
     frutas.push(key);
-    // console.log(key);
 }
 });
 

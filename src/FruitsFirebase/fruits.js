@@ -4,26 +4,25 @@ import { Searcher } from "../Searcher/Searcher"
 
 function ListaFrutas (){
 
-    const [data,setData]=useState('');
     const [Fruits,setFruits]=useState([]);
     const [tablafrutas,setTablafrutas]=useState([])
 
     function UpdateInterface(e){
-        setData(e);
         filterListProducts(e);
     }
-
     function filterListProducts(terminoBusqueda){
-        var resultsFiltered=tablafrutas.filter((elemento)=>{
-            if(elemento.Nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
-              return elemento;
-            }
-          });
-          setFruits(resultsFiltered);
+        var resultsFiltered=tablafrutas.filter((elemento)=> elemento.Nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()));
+        setFruits(resultsFiltered);
     }
-
     useEffect(()=>{
-        setFruits(frutas)
+
+        let ToSaveOnLocalStorage={frutas:frutas};
+
+        localStorage.setItem("cod_frutas",JSON.stringify(ToSaveOnLocalStorage));
+        let retrieve=localStorage.getItem("cod_frutas");
+        let defFrutas=JSON.parse(retrieve).frutas;
+        console.log(defFrutas);
+        setFruits(defFrutas);
         setTablafrutas(frutas)
     },[])
 
@@ -32,7 +31,7 @@ function ListaFrutas (){
         <div className="contenedor_frutas">
                 <Searcher onJonathan={ UpdateInterface } />
                 {/* <h1>{ dato }</h1> */}
-                <ul>
+                <ul className="responsive_fruits">
                         { Fruits.map((item)=>(
                             <div className="card" key={item.Nombre}>
                                 <h1 className="card-title">{item.Nombre}</h1>
@@ -45,38 +44,6 @@ function ListaFrutas (){
                 </ul> 
         </div>
     )
-}
-
-class Input extends React.Component {
-
-        constructor(props) {
-            super(props);
-            this.handleClick = this.handleClick.bind(this)
-            this.insert=this.insert.bind(this);
-            this.state = {temperature: ''};
-        }
-
-        insert(articulo,cantidad){
-            console.log(articulo,cantidad);
-        }
-        handleClick(e){
-            console.log(e.target.value);
-            this.setState({temperature: e.target.value});
-        }
-
-        render(){
-            const tempo=this.state.temperature;
-            return (
-                <div>
-                    <input
-                        placeholder="Cantidad?" 
-                        value={ tempo }
-                        onChange={ this.handleClick }
-                    />
-                    <button onClick={ () => this.insert(this.props.nombre,parseInt(tempo) ) }>Update</button>
-                </div>
-            )
-        }
 }
 
 export function Frutas (props){

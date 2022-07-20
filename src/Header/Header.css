@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    background-color: blueviolet;
+    background-color: rgba(247, 139, 139, 0.952);
 }
 /*Las 2 imagenes del costado derecho*/
 .img1{
@@ -11,7 +11,9 @@
 }
 /*Barra navegacion*/
 nav{
-    display: flex;align-items: center;padding: 20px 8%;
+    display: flex;align-items: center;padding: 10px 8%;
+    /* alineado horizontal de los componentes */
+    justify-content: center;
 }
 /*Enlaces de la barra de navegacion*/
 nav ul{
